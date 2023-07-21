@@ -1,28 +1,23 @@
-//Regresion Logistica
+//Regresion Lineal Simple (SLR) via Gradiente Descendente (GD)
 
-package handson.handson7;
+package regression.simple_linear_regression_gd;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class LRGui extends JFrame {	
-  private LR myAgent;
-	private JTextField valueX1Field, valueX2Field;
+class SLRGui extends JFrame {	
+    private SLR myAgent;
+	private JTextField valueXField, priceField;
 	
-	LRGui(LR a) {
-		
+	SLRGui(SLR a) {
 		myAgent = a;
 		
 		JPanel p = new JPanel();
 		p.setLayout(new GridLayout(2, 2));
-		p.add(new JLabel("Valor de X1:"));
-		valueX1Field = new JTextField(15);
-		p.add(valueX1Field);
-        p.add(new JLabel("Valor de X2:"));
-		valueX2Field = new JTextField(15);
-		p.add(valueX2Field);
-		getContentPane().add(p, BorderLayout.CENTER);
+		p.add(new JLabel("Valor de X:"));
+		valueXField = new JTextField(15);
+		p.add(valueXField);
 
 		getContentPane().add(p, BorderLayout.CENTER);
 		
@@ -30,15 +25,13 @@ class LRGui extends JFrame {
 		addButton.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent ev) {
 				try {
-					String valueX1 = valueX1Field.getText().trim();
-                    String valueX2 = valueX2Field.getText().trim();
+					String valueX = valueXField.getText().trim();
 
-					myAgent.regresion_logistica(Double.parseDouble(valueX1), Double.parseDouble(valueX2));
-					valueX1Field.setText("");
-					valueX2Field.setText("");
+          myAgent.gradiente_descendente(Double.parseDouble(valueX)); 
+					valueXField.setText("");
 				}
 				catch (Exception e) {
-					JOptionPane.showMessageDialog(LRGui.this, "Invalid values. "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE); 
+					JOptionPane.showMessageDialog(SLRGui.this, "Invalid values. "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE); 
 				}
 			}
 		} );
@@ -46,7 +39,7 @@ class LRGui extends JFrame {
 		p = new JPanel();
 		p.add(addButton);
 		getContentPane().add(p, BorderLayout.SOUTH);
-		
+				
 		setResizable(false);
 	}
 	

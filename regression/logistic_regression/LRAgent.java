@@ -1,6 +1,6 @@
 //Regresion Logistica
 
-package handson.handson7;
+package regression.logistic_regression;
 
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;

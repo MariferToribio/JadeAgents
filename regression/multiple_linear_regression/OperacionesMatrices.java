@@ -1,6 +1,6 @@
 //Regresion Lineal Multiple (MLR)
 
-package handson.handson5;
+package regression.multiple_linear_regression;
 
 public class OperacionesMatrices{
         //CALCULAR TRASPUESTA

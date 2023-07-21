@@ -1,23 +1,28 @@
-//Regresion Lineal Simple (SLR) via Gradiente Descendente (GD)
+//Regresion Logistica
 
-package handson.handson6;
+package regression.logistic_regression;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-class SLRGui extends JFrame {	
-    private SLR myAgent;
-	private JTextField valueXField, priceField;
+class LRGui extends JFrame {	
+  private LR myAgent;
+	private JTextField valueX1Field, valueX2Field;
 	
-	SLRGui(SLR a) {
+	LRGui(LR a) {
+		
 		myAgent = a;
 		
 		JPanel p = new JPanel();
 		p.setLayout(new GridLayout(2, 2));
-		p.add(new JLabel("Valor de X:"));
-		valueXField = new JTextField(15);
-		p.add(valueXField);
+		p.add(new JLabel("Valor de X1:"));
+		valueX1Field = new JTextField(15);
+		p.add(valueX1Field);
+        p.add(new JLabel("Valor de X2:"));
+		valueX2Field = new JTextField(15);
+		p.add(valueX2Field);
+		getContentPane().add(p, BorderLayout.CENTER);
 
 		getContentPane().add(p, BorderLayout.CENTER);
 		
@@ -25,13 +30,15 @@ class SLRGui extends JFrame {
 		addButton.addActionListener( new ActionListener() {
 			public void actionPerformed(ActionEvent ev) {
 				try {
-					String valueX = valueXField.getText().trim();
+					String valueX1 = valueX1Field.getText().trim();
+                    String valueX2 = valueX2Field.getText().trim();
 
-          myAgent.gradiente_descendente(Double.parseDouble(valueX)); 
-					valueXField.setText("");
+					myAgent.regresion_logistica(Double.parseDouble(valueX1), Double.parseDouble(valueX2));
+					valueX1Field.setText("");
+					valueX2Field.setText("");
 				}
 				catch (Exception e) {
-					JOptionPane.showMessageDialog(SLRGui.this, "Invalid values. "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE); 
+					JOptionPane.showMessageDialog(LRGui.this, "Invalid values. "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE); 
 				}
 			}
 		} );
@@ -39,7 +46,7 @@ class SLRGui extends JFrame {
 		p = new JPanel();
 		p.add(addButton);
 		getContentPane().add(p, BorderLayout.SOUTH);
-				
+		
 		setResizable(false);
 	}
 	

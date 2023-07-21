@@ -1,6 +1,6 @@
 //Regresion Simple Lineal (SLR)
 
-package handson.handson4;
+package regression.simple_linear_regression;
 
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
@@ -89,7 +89,7 @@ class Regresion {
       System.out.println("Y = " +  Y);
       System.out.println();
 
-      myGui.dispose();
+      //myGui.dispose();
     }
 
     //METODO PARA MULTIPLICAR VALORES DE DOS ARREGLOS

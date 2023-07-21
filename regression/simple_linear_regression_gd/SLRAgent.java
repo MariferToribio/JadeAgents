@@ -1,6 +1,6 @@
 //Regresion Lineal Simple (SLR) via Gradiente Descendente (GD)
 
-package handson.handson6;
+package regression.simple_linear_regression_gd;
 
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;

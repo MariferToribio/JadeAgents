@@ -1,6 +1,6 @@
 //Regresion Lineal Multiple (MLR)
 
-package handson.handson5;
+package regression.multiple_linear_regression;
 
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;

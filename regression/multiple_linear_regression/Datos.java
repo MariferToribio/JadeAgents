@@ -1,6 +1,6 @@
 //Regresion Lineal Multiple (MLR)
 
-package handson.handson5;
+package regression.multiple_linear_regression;
 
 public class Datos{
     /*DATASET DE HANDS-ON 3

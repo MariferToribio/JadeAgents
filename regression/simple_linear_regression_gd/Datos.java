@@ -1,6 +1,6 @@
 //Regresion Lineal Simple (SLR) via Gradiente Descendente (GD)
 
-package handson.handson6;
+package regression.simple_linear_regression_gd;
 
 public class Datos{
     private double arreglo_x1[] =  new double []{1,2,3,4,5,6,7,8,9};

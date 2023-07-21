@@ -1,6 +1,6 @@
 //Regresion Logistica
 
-package handson.handson7;
+package regression.logistic_regression;
 
 public class Datos{
     private double arreglo_x1[] = new double []{1,1}; 
